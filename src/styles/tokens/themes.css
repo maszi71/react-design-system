@@ -80,44 +80,76 @@
    Dark Theme (placeholder)
    ========================= */
 :root[data-theme="dark"] {
-  /* placeholder surfaces */
-  --ds-bg: var(--ds-neutral-350);
-  --ds-surface: var(--ds-neutral-300);
+  /* ===== Surface (Dark) ===== */
+  --ds-surface-bg-white: var(--ds-neutral-400); /* page bg (dark base) */
+  --ds-surface-bg-soft: var(--ds-neutral-350);  /* cards/surfaces */
+  --ds-surface-primary: var(--ds-primary-250);  /* slightly lighter than light primary for dark UI */
+  --ds-surface-disable: var(--ds-neutral-300);  /* disabled surface */
+
+  /* ===== Content (Dark) =====
+     در Dark، content scale را معکوس می‌کنیم:
+     300 = قوی‌ترین متن (روشن‌ترین)
+  */
+  --ds-content-300: var(--ds-neutral-50);
+  --ds-content-250: var(--ds-neutral-100);
+  --ds-content-200: var(--ds-neutral-150);
+  --ds-content-150: var(--ds-neutral-200);
+  --ds-content-100: var(--ds-neutral-250);
+  --ds-content-50: var(--ds-neutral-300);
+
+  --ds-content-primary-300: var(--ds-primary-200);
+
+  /* ===== Border (Dark) ===== */
+  --ds-border-neutral: var(--ds-neutral-300);
+  --ds-border-primary: var(--ds-primary-200);
+  --ds-border-secondary: var(--ds-secondary-200);
+
+  /* ===== Core semantics ===== */
+  --ds-bg: var(--ds-surface-bg-white);
+  --ds-surface: var(--ds-surface-bg-soft);
   --ds-surface-2: var(--ds-neutral-300);
 
-  --ds-text: var(--ds-neutral-50);
-  --ds-muted: var(--ds-neutral-200);
+  --ds-text: var(--ds-content-300);
+  --ds-muted: var(--ds-content-200);
 
-  --ds-border: var(--ds-neutral-250);
+  --ds-border: var(--ds-border-neutral);
   --ds-ring: var(--ds-primary-200);
 
-  --ds-primary: var(--ds-primary-200);
-  --ds-primary-hover: var(--ds-primary-150);
-  --ds-primary-active: var(--ds-primary-100);
-  --ds-on-primary: var(--ds-neutral-350);
+  /* ===== Primary ===== */
+  --ds-primary: var(--ds-primary-250);
+  --ds-primary-hover: var(--ds-primary-200);   /* روشن‌تر روی hover */
+  --ds-primary-active: var(--ds-primary-300);  /* کمی تیره‌تر روی active */
+  --ds-on-primary: var(--ds-neutral-0);
 
-  --ds-secondary: var(--ds-secondary-200);
-  --ds-secondary-hover: var(--ds-secondary-150);
-  --ds-secondary-active: var(--ds-secondary-100);
-  --ds-on-secondary: var(--ds-neutral-350);
+  /* ===== Secondary ===== */
+  --ds-secondary: var(--ds-secondary-250);
+  --ds-secondary-hover: var(--ds-secondary-200);
+  --ds-secondary-active: var(--ds-secondary-300);
+  --ds-on-secondary: var(--ds-neutral-400);
 
-  --ds-danger: var(--ds-error-150);
-  --ds-danger-hover: var(--ds-error-100);
-  --ds-danger-active: var(--ds-error-50);
-  --ds-on-danger: var(--ds-neutral-350);
+  /* ===== Danger ===== */
+  --ds-danger: var(--ds-error-200);
+  --ds-danger-hover: var(--ds-error-250);
+  --ds-danger-active: var(--ds-error-300);
+  --ds-on-danger: var(--ds-neutral-0);
 
-  --ds-warning: var(--ds-warning-150);
-  --ds-warning-hover: var(--ds-warning-100);
-  --ds-warning-active: var(--ds-warning-50);
-  --ds-on-warning: var(--ds-neutral-350);
+  /* ===== Warning ===== */
+  --ds-warning: var(--ds-warning-200);
+  --ds-warning-hover: var(--ds-warning-250);
+  --ds-warning-active: var(--ds-warning-250);
+  --ds-on-warning: var(--ds-neutral-400);
 
+  /* ===== Success ===== */
   --ds-success: var(--ds-success-300);
   --ds-success-hover: var(--ds-success-300);
   --ds-success-active: var(--ds-success-300);
-  --ds-on-success: var(--ds-neutral-350);
+  --ds-on-success: var(--ds-neutral-0);
 
-  --ds-disabled: var(--ds-neutral-300);
-  --ds-on-disabled: var(--ds-neutral-200);
+  /* ===== Disabled ===== */
+  --ds-disabled: var(--ds-surface-disable);
+  --ds-on-disabled: var(--ds-content-150);
 
-  --ds-overlay: rgba(0, 0, 0, 0.6);
+  /* Overlay */
+  --ds-overlay: rgba(0, 0, 0, 0.65);
 }
+
