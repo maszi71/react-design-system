@@ -1,5 +1,9 @@
 :root {
-  /* ====== Angular primitives (as-is) ====== */
+  /* =========================
+     Primitives (from Angular)
+     ========================= */
+
+  /* Neutral */
   --neutral-0: #ffffff;
   --neutral-50: #ebeef2;
   --neutral-100: #dee1e4;
@@ -7,9 +11,11 @@
   --neutral-200: #9f9ca3;
   --neutral-250: #756e77;
   --neutral-300: #514752;
-  --neutral-350: #1c0d1b;
+  --neutral-350: #312431; /* added per Figma palette */
+  --neutral-400: #1c0d1b; /* added per Figma darkest neutral */
   --black: #000000;
 
+  /* Primary (Purple) */
   --primary-50: #f5f1fe;
   --primary-100: #e3d8fc;
   --primary-150: #c8b1fa;
@@ -19,6 +25,7 @@
   --primary-350: #6332c7;
   --primary-400: #51299c;
 
+  /* Secondary (Aquamarine) */
   --secondary-50: #f2fdfb;
   --secondary-100: #ccf9ed;
   --secondary-150: #66edc9;
@@ -27,6 +34,7 @@
   --secondary-300: #06d19b;
   --secondary-350: #10bb8d;
 
+  /* Status: Error */
   --errors-50: #fdeae8;
   --errors-100: #f8aca5;
   --errors-150: #f1594b;
@@ -34,33 +42,36 @@
   --errors-250: #be2618;
   --errors-300: #8e1d12;
 
-  --gold-service-300: #eab10e;
-  --gold-service-100: #fbefcf;
-
-  --fund-service-300: #bb2424;
-  --fund-service-100: #f1d3d3;
-
-  --salary-service-300: #158ade;
-  --salary-service-100: #d0e8f8;
-
-  --cheque-service-300: #749aeb;
-  --cheque-service-100: #f9f9ff;
-
+  /* Status: Warning */
   --warning-50: #fff4e6;
   --warning-100: #fedfb3;
   --warning-150: #fda934;
   --warning-200: #fc9401;
   --warning-250: #ca7601;
 
+  /* Status: Success */
   --success-250: #d7f2e0;
   --success-300: #38bc64;
 
+  /* Service colors (domain specific) */
+  --gold-service-100: #fbefcf;
+  --gold-service-300: #eab10e;
+
+  --fund-service-100: #f1d3d3;
+  --fund-service-300: #bb2424;
+
+  --salary-service-100: #d0e8f8;
+  --salary-service-300: #158ade;
+
+  --cheque-service-100: #f9f9ff;
+  --cheque-service-300: #749aeb;
+
+  /* Surfaces */
   --surface-bg-Light: #eff3f6;
 
-  /* ====== DS aliases (recommended) ======
-     این‌ها فقط alias هستند تا داخل DS همیشه از ds- استفاده کنیم.
-     مهاجرت کامپوننت‌ها راحت‌تر و یکنواخت‌تر می‌شود.
-  */
+  /* =========================
+     DS aliases (recommended)
+     ========================= */
 
   /* neutrals */
   --ds-neutral-0: var(--neutral-0);
@@ -71,6 +82,7 @@
   --ds-neutral-250: var(--neutral-250);
   --ds-neutral-300: var(--neutral-300);
   --ds-neutral-350: var(--neutral-350);
+  --ds-neutral-400: var(--neutral-400);
   --ds-black: var(--black);
 
   /* primary */
@@ -109,7 +121,7 @@
   --ds-success-250: var(--success-250);
   --ds-success-300: var(--success-300);
 
-  /* service colors (domain specific) */
+  /* service colors */
   --ds-service-gold-100: var(--gold-service-100);
   --ds-service-gold-300: var(--gold-service-300);
 
@@ -123,5 +135,5 @@
   --ds-service-cheque-300: var(--cheque-service-300);
 
   /* surfaces */
-  --ds-surface-bg-light: var(--surface-bg-Light);
+  --ds-surface-bg-soft: var(--surface-bg-Light);
 }

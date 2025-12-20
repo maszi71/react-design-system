@@ -8,6 +8,7 @@
 
 /* Tailwind v4 theme mapping */
 @theme {
+  /* ===== Core app semantics ===== */
   --color-bg: var(--ds-bg);
   --color-surface: var(--ds-surface);
   --color-surface-2: var(--ds-surface-2);
@@ -47,6 +48,25 @@
 
   --color-overlay: var(--ds-overlay);
 
+  /* ===== Figma-aligned extra semantics (optional) ===== */
+  --color-surface-primary: var(--ds-surface-primary);
+  --color-surface-disable: var(--ds-surface-disable);
+  --color-surface-bg-white: var(--ds-surface-bg-white);
+  --color-surface-bg-soft: var(--ds-surface-bg-soft);
+
+  --color-border-neutral: var(--ds-border-neutral);
+  --color-border-primary: var(--ds-border-primary);
+  --color-border-secondary: var(--ds-border-secondary);
+
+  --color-content-50: var(--ds-content-50);
+  --color-content-100: var(--ds-content-100);
+  --color-content-150: var(--ds-content-150);
+  --color-content-200: var(--ds-content-200);
+  --color-content-250: var(--ds-content-250);
+  --color-content-300: var(--ds-content-300);
+  --color-content-primary-300: var(--ds-content-primary-300);
+
+  /* ===== Radii ===== */
   --radius-sm: var(--ds-radius-sm);
   --radius-md: var(--ds-radius-md);
   --radius-lg: var(--ds-radius-lg);
