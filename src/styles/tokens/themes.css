@@ -1,4 +1,4 @@
-:root[data-theme="light"] {
+:root {
   /* surfaces */
   --ds-bg: var(--ds-neutral-0);
   --ds-surface: var(--ds-surface-bg-light); /* یا neutral-50، انتخاب شما */

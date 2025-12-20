@@ -4,7 +4,7 @@
 @import "./tokens/tokens.css";
 @import "./tokens/themes.css";
 @import "./tokens/typography.css";
-
+@import "./tokens/radius.css";
 
 /* Tailwind v4 theme mapping */
 @theme {
@@ -46,4 +46,9 @@
   --color-on-disabled: var(--ds-on-disabled);
 
   --color-overlay: var(--ds-overlay);
+
+  --radius-sm: var(--ds-radius-sm);
+  --radius-md: var(--ds-radius-md);
+  --radius-lg: var(--ds-radius-lg);
+  --radius-xl: var(--ds-radius-xl);
 }

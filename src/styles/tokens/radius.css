@@ -1,0 +1,19 @@
+:root {
+  /* Primitive radius scale */
+  --ds-radius-0: 0px;
+  --ds-radius-2: 2px;
+  --ds-radius-4: 4px;
+  --ds-radius-6: 6px;
+  --ds-radius-8: 8px;
+  --ds-radius-10: 10px;
+  --ds-radius-12: 12px;
+  --ds-radius-16: 16px;
+  --ds-radius-999: 999px;
+
+  /* Semantic radius (recommended) */
+  --ds-radius-sm: var(--ds-radius-6);   /* inputs, small chips */
+  --ds-radius-md: var(--ds-radius-8);   /* buttons, cards */
+  --ds-radius-lg: var(--ds-radius-12);  /* modals, large cards */
+  --ds-radius-xl: var(--ds-radius-16);  /* heavy UI */
+  --ds-radius-pill: var(--ds-radius-999);
+}
