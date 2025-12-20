@@ -1,0 +1,12 @@
+:root {
+  --ds-bg: #ffffff;
+  --ds-surface: #ebeef2;
+  --ds-text: #1c0d1b;
+  --ds-muted: #756e77;
+  --ds-border: #c3c3c8;
+
+  --ds-primary: #753bf2;
+  --ds-primary-hover: #9162f5;
+  --ds-primary-active: #6332c7;
+  --ds-on-primary: #ffffff;
+}

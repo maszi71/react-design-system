@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+/* DS tokens */
+@import "./tokens/tokens.css";
+@import "./tokens/themes.css";
+@import "./tokens/typography.css";
+
+
+/* Tailwind v4 theme mapping */
+@theme {
+  --color-bg: var(--ds-bg);
+  --color-surface: var(--ds-surface);
+  --color-text: var(--ds-text);
+  --color-muted: var(--ds-muted);
+  --color-border: var(--ds-border);
+
+  --color-primary: var(--ds-primary);
+  --color-primary-hover: var(--ds-primary-hover);
+  --color-primary-active: var(--ds-primary-active);
+  --color-on-primary: var(--ds-on-primary);
+}

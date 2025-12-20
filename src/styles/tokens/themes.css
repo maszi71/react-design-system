@@ -1,0 +1,12 @@
+:root[data-theme="dark"] {
+  --ds-bg: #0b0a10;
+  --ds-surface: #14121d;
+  --ds-text: #f3f2f7;
+  --ds-muted: #a7a3b1;
+  --ds-border: #2b2835;
+
+  --ds-primary: #a78bfa;
+  --ds-primary-hover: #b9a2ff;
+  --ds-primary-active: #8b6df2;
+  --ds-on-primary: #0b0a10;
+}
