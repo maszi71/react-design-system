@@ -15,6 +15,7 @@ component ergonomics.
 - Vite
 - Tailwind CSS v4
 - class-variance-authority + tailwind-merge for variants
+- Storybook 10
 
 ## Getting Started
 
@@ -23,12 +24,19 @@ npm install
 npm run dev
 ```
 
+Run Storybook:
+
+```bash
+npm run storybook
+```
+
 ## Project Structure
 
 - `src/components/` - Components, one folder per component
 - `src/styles/` - Global styles and tokens
 - `src/styles/tokens/` - Design tokens and themes
 - `src/utils/cn.ts` - className utility
+- `.storybook/` - Storybook config
 
 ## Design Tokens
 
@@ -61,6 +69,26 @@ import { Button } from "@/components/button";
 <Button variant="secondary">Secondary</Button>;
 ```
 
+## Storybook
+
+Stories live next to components using `*.stories.tsx`.
+Storybook loads design-system tokens via `src/styles/index.css`.
+
+Example:
+
+```tsx
+// src/components/button/button.stories.tsx
+import type { Meta } from "@storybook/react";
+import { Button } from "./button";
+
+const meta: Meta<typeof Button> = {
+  title: "Components/Button",
+  component: Button,
+};
+
+export default meta;
+```
+
 ## Conventions
 
 - One component per folder with `index.ts` re-export.
@@ -73,6 +101,8 @@ import { Button } from "@/components/button";
 - `npm run build` - typecheck + build
 - `npm run lint` - lint
 - `npm run preview` - preview build
+- `npm run storybook` - run Storybook
+- `npm run build-storybook` - build Storybook
 
 ## Next Docs
 

@@ -13,8 +13,8 @@ Copy it, fill it in, and keep it updated as the system evolves.
 ## 2) Current Status
 
 - **Stage:** (prototype, alpha, beta, production)
-- **What is done:** (components, tokens, themes)
-- **In progress:** (current focus area)
+- **What is done:** (components, tokens, themes, Storybook setup)
+- **In progress:** (current focus area, next component)
 - **Biggest risks:** (scope, tech debt, unknowns)
 
 ## 3) Key Decisions (Decision Log)
@@ -46,6 +46,7 @@ Add date and rationale if it changes.
 - `src/styles/tokens/` - tokens and theme overrides
 - `src/components/` - component folders
 - `src/utils/cn.ts` - className helper
+- `.storybook/` - Storybook configuration
 
 ## 7) Workflow
 
@@ -55,8 +56,8 @@ Add date and rationale if it changes.
 
 ## 8) Testing and QA
 
-- **Current tests:** (none / unit / visual)
-- **Planned tests:** (Storybook, Playwright, snapshots)
+- **Current tests:** (Storybook stories)
+- **Planned tests:** (Storybook a11y, Playwright, snapshots)
 - **Manual checks:** (focus, contrast, themes)
 
 ## 9) Open Questions
