@@ -1,6 +1,27 @@
+/*
+  tokens.css
+  ----------
+  This file defines the "primitive" color palette (raw values) as CSS variables.
+  Think of these as brand / design inputs (neutral scale, primary scale, etc.).
+
+  Why primitives?
+  - They are stable building blocks: you can tweak brand colors without touching components.
+  - They are NOT tied to UI meaning. For example, `--primary-300` is just a purple.
+  - They are shared across themes (light/dark) and across products (website/panel/office).
+
+  Why CSS variables?
+  - Runtime theming: themes can be switched by updating attributes (no rebuild needed).
+  - Works everywhere: components, Storybook, and any app consuming this DS.
+  - Keeps design decisions centralized and debuggable in DevTools.
+
+  DS aliases (`--ds-*`) exist to decouple the design system from legacy naming (e.g. Angular tokens).
+  Components and theme mappings should prefer `--ds-*` to keep a consistent API.
+*/
+
+
 :root {
   /* =========================
-     Primitives (from Angular)
+     Primitives 
      ========================= */
 
   /* Neutral */
@@ -11,8 +32,8 @@
   --neutral-200: #9f9ca3;
   --neutral-250: #756e77;
   --neutral-300: #514752;
-  --neutral-350: #312431; /* added per Figma palette */
-  --neutral-400: #1c0d1b; /* added per Figma darkest neutral */
+  --neutral-350: #312431; 
+  --neutral-400: #1c0d1b; 
   --black: #000000;
 
   /* Primary (Purple) */
@@ -70,7 +91,7 @@
   --surface-bg-Light: #eff3f6;
 
   /* =========================
-     DS aliases (recommended)
+     DS aliases 
      ========================= */
 
   /* neutrals */

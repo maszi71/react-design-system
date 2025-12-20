@@ -6,7 +6,29 @@
 @import "./tokens/typography.css";
 @import "./tokens/radius.css";
 
-/* Tailwind v4 theme mapping */
+/*
+  index.css
+  ---------
+  This is the single CSS entrypoint for the design system.
+  It composes:
+  - Tailwind v4 base (utilities + engine)
+  - DS token files (palette, themes, typography, radius, etc.)
+  - Tailwind theme mapping via `@theme`
+
+  Why map DS tokens into Tailwind?
+  - Tailwind is used as the styling "execution layer" (utilities, states, responsive).
+  - The design decisions still live in tokens (CSS variables), not in Tailwind config.
+  - Components can use ergonomic classes (e.g. `bg-primary`, `text-text`, `border-border`)
+    while values remain runtime themeable.
+
+  Practical rule:
+  - Tokens define "what" (design decisions).
+  - Tailwind utilities define "how" (layout, spacing, interaction states).
+  - Components should avoid hard-coded hex values and prefer semantic classes/tokens.
+*/
+
+
+
 @theme {
   /* ===== Core app semantics ===== */
   --color-bg: var(--ds-bg);

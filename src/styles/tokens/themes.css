@@ -1,19 +1,37 @@
+/*
+  themes.css
+  ----------
+  This file defines "semantic" tokens (meaningful roles) for each theme.
+  Instead of components referencing raw palette steps like `--primary-300`,
+  components should reference semantic variables like `--ds-bg`, `--ds-text`, `--ds-primary`.
+
+  Semantic tokens are what make the design system scalable:
+  - Components depend on meaning (bg/text/border/primary), not on specific color values.
+  - You can redesign the theme by changing mappings here, without rewriting components.
+  - Light/Dark (and future themes) become configuration, not code changes.
+
+  Theme switching:
+  - The active theme is selected by the `data-theme` attribute on <html>.
+    Example: <html data-theme="light"> or <html data-theme="dark">
+  - Storybook also sets this attribute (via preview decorators) so tokens resolve identically
+    in both the app and the DS documentation.
+
+  Note:
+  - We keep Figma-aligned groups (Surface / Content / Border) as semantic layers.
+    They mirror design intent and make migration from existing systems easier.
+*/
+
 /* =========================
-   Light Theme (Figma-aligned)
+   Light Theme 
    ========================= */
 :root[data-theme="light"] {
-  /* ===== Surface (from Figma) ===== */
+  /* ===== Surface */
   --ds-surface-primary: var(--ds-primary-300);       /* #753BF2 */
   --ds-surface-disable: var(--ds-neutral-50);        /* #EBEEF2 */
   --ds-surface-bg-white: var(--ds-neutral-0);        /* #FFFFFF */
-  --ds-surface-bg-light: var(--ds-surface-bg-light); /* #EFF3F6 (alias from tokens.css) */
-  /* نکته: اسم --ds-surface-bg-light همینجا تداخل داشت.
-     پس بهتر است alias فایل tokens را تغییر بدهیم به:
-     --ds-surface-bg-soft: var(--surface-bg-Light);
-     و اینجا از آن استفاده کنیم.
-  */
+  --ds-surface-bg-light: var(--ds-surface-bg-light); /* #EFF3F6  */
 
-  /* ===== Content (from Figma) ===== */
+  /* ===== Content */
   --ds-content-50: var(--ds-neutral-0);      /* #FFFFFF */
   --ds-content-100: var(--ds-neutral-150);   /* #C3C3C8 */
   --ds-content-150: var(--ds-neutral-200);   /* #9F9CA3 */
@@ -22,7 +40,7 @@
   --ds-content-300: var(--ds-neutral-400);   /* #1C0D1B */
   --ds-content-primary-300: var(--ds-primary-300);
 
-  /* ===== Border (from Figma) ===== */
+  /* ===== Border */
   --ds-border-neutral: var(--ds-neutral-150);      /* #C3C3C8 */
   --ds-border-primary: var(--ds-primary-300);      /* #753BF2 */
   --ds-border-secondary: var(--ds-secondary-250);  /* #00E1A5 */
@@ -85,11 +103,6 @@
   --ds-surface-bg-soft: var(--ds-neutral-350);  /* cards/surfaces */
   --ds-surface-primary: var(--ds-primary-250);  /* slightly lighter than light primary for dark UI */
   --ds-surface-disable: var(--ds-neutral-300);  /* disabled surface */
-
-  /* ===== Content (Dark) =====
-     در Dark، content scale را معکوس می‌کنیم:
-     300 = قوی‌ترین متن (روشن‌ترین)
-  */
   --ds-content-300: var(--ds-neutral-50);
   --ds-content-250: var(--ds-neutral-100);
   --ds-content-200: var(--ds-neutral-150);
@@ -117,8 +130,8 @@
 
   /* ===== Primary ===== */
   --ds-primary: var(--ds-primary-250);
-  --ds-primary-hover: var(--ds-primary-200);   /* روشن‌تر روی hover */
-  --ds-primary-active: var(--ds-primary-300);  /* کمی تیره‌تر روی active */
+  --ds-primary-hover: var(--ds-primary-200);   
+  --ds-primary-active: var(--ds-primary-300);  
   --ds-on-primary: var(--ds-neutral-0);
 
   /* ===== Secondary ===== */
