@@ -1,12 +1,127 @@
 :root {
-  --ds-bg: #ffffff;
-  --ds-surface: #ebeef2;
-  --ds-text: #1c0d1b;
-  --ds-muted: #756e77;
-  --ds-border: #c3c3c8;
+  /* ====== Angular primitives (as-is) ====== */
+  --neutral-0: #ffffff;
+  --neutral-50: #ebeef2;
+  --neutral-100: #dee1e4;
+  --neutral-150: #c3c3c8;
+  --neutral-200: #9f9ca3;
+  --neutral-250: #756e77;
+  --neutral-300: #514752;
+  --neutral-350: #1c0d1b;
+  --black: #000000;
 
-  --ds-primary: #753bf2;
-  --ds-primary-hover: #9162f5;
-  --ds-primary-active: #6332c7;
-  --ds-on-primary: #ffffff;
+  --primary-50: #f5f1fe;
+  --primary-100: #e3d8fc;
+  --primary-150: #c8b1fa;
+  --primary-200: #ac89f7;
+  --primary-250: #9162f5;
+  --primary-300: #753bf2;
+  --primary-350: #6332c7;
+  --primary-400: #51299c;
+
+  --secondary-50: #f2fdfb;
+  --secondary-100: #ccf9ed;
+  --secondary-150: #66edc9;
+  --secondary-200: #33e7b7;
+  --secondary-250: #00e1a5;
+  --secondary-300: #06d19b;
+  --secondary-350: #10bb8d;
+
+  --errors-50: #fdeae8;
+  --errors-100: #f8aca5;
+  --errors-150: #f1594b;
+  --errors-200: #ed301e;
+  --errors-250: #be2618;
+  --errors-300: #8e1d12;
+
+  --gold-service-300: #eab10e;
+  --gold-service-100: #fbefcf;
+
+  --fund-service-300: #bb2424;
+  --fund-service-100: #f1d3d3;
+
+  --salary-service-300: #158ade;
+  --salary-service-100: #d0e8f8;
+
+  --cheque-service-300: #749aeb;
+  --cheque-service-100: #f9f9ff;
+
+  --warning-50: #fff4e6;
+  --warning-100: #fedfb3;
+  --warning-150: #fda934;
+  --warning-200: #fc9401;
+  --warning-250: #ca7601;
+
+  --success-250: #d7f2e0;
+  --success-300: #38bc64;
+
+  --surface-bg-Light: #eff3f6;
+
+  /* ====== DS aliases (recommended) ======
+     این‌ها فقط alias هستند تا داخل DS همیشه از ds- استفاده کنیم.
+     مهاجرت کامپوننت‌ها راحت‌تر و یکنواخت‌تر می‌شود.
+  */
+
+  /* neutrals */
+  --ds-neutral-0: var(--neutral-0);
+  --ds-neutral-50: var(--neutral-50);
+  --ds-neutral-100: var(--neutral-100);
+  --ds-neutral-150: var(--neutral-150);
+  --ds-neutral-200: var(--neutral-200);
+  --ds-neutral-250: var(--neutral-250);
+  --ds-neutral-300: var(--neutral-300);
+  --ds-neutral-350: var(--neutral-350);
+  --ds-black: var(--black);
+
+  /* primary */
+  --ds-primary-50: var(--primary-50);
+  --ds-primary-100: var(--primary-100);
+  --ds-primary-150: var(--primary-150);
+  --ds-primary-200: var(--primary-200);
+  --ds-primary-250: var(--primary-250);
+  --ds-primary-300: var(--primary-300);
+  --ds-primary-350: var(--primary-350);
+  --ds-primary-400: var(--primary-400);
+
+  /* secondary */
+  --ds-secondary-50: var(--secondary-50);
+  --ds-secondary-100: var(--secondary-100);
+  --ds-secondary-150: var(--secondary-150);
+  --ds-secondary-200: var(--secondary-200);
+  --ds-secondary-250: var(--secondary-250);
+  --ds-secondary-300: var(--secondary-300);
+  --ds-secondary-350: var(--secondary-350);
+
+  /* status */
+  --ds-error-50: var(--errors-50);
+  --ds-error-100: var(--errors-100);
+  --ds-error-150: var(--errors-150);
+  --ds-error-200: var(--errors-200);
+  --ds-error-250: var(--errors-250);
+  --ds-error-300: var(--errors-300);
+
+  --ds-warning-50: var(--warning-50);
+  --ds-warning-100: var(--warning-100);
+  --ds-warning-150: var(--warning-150);
+  --ds-warning-200: var(--warning-200);
+  --ds-warning-250: var(--warning-250);
+
+  --ds-success-250: var(--success-250);
+  --ds-success-300: var(--success-300);
+
+  /* service colors (domain specific) */
+  --ds-service-gold-100: var(--gold-service-100);
+  --ds-service-gold-300: var(--gold-service-300);
+
+  --ds-service-fund-100: var(--fund-service-100);
+  --ds-service-fund-300: var(--fund-service-300);
+
+  --ds-service-salary-100: var(--salary-service-100);
+  --ds-service-salary-300: var(--salary-service-300);
+
+  --ds-service-cheque-100: var(--cheque-service-100);
+  --ds-service-cheque-300: var(--cheque-service-300);
+
+  /* surfaces */
+  --ds-surface-bg-light: var(--surface-bg-Light);
 }

@@ -10,12 +10,40 @@
 @theme {
   --color-bg: var(--ds-bg);
   --color-surface: var(--ds-surface);
+  --color-surface-2: var(--ds-surface-2);
+
   --color-text: var(--ds-text);
   --color-muted: var(--ds-muted);
   --color-border: var(--ds-border);
+  --color-ring: var(--ds-ring);
 
   --color-primary: var(--ds-primary);
   --color-primary-hover: var(--ds-primary-hover);
   --color-primary-active: var(--ds-primary-active);
   --color-on-primary: var(--ds-on-primary);
+
+  --color-secondary: var(--ds-secondary);
+  --color-secondary-hover: var(--ds-secondary-hover);
+  --color-secondary-active: var(--ds-secondary-active);
+  --color-on-secondary: var(--ds-on-secondary);
+
+  --color-danger: var(--ds-danger);
+  --color-danger-hover: var(--ds-danger-hover);
+  --color-danger-active: var(--ds-danger-active);
+  --color-on-danger: var(--ds-on-danger);
+
+  --color-warning: var(--ds-warning);
+  --color-warning-hover: var(--ds-warning-hover);
+  --color-warning-active: var(--ds-warning-active);
+  --color-on-warning: var(--ds-on-warning);
+
+  --color-success: var(--ds-success);
+  --color-success-hover: var(--ds-success-hover);
+  --color-success-active: var(--ds-success-active);
+  --color-on-success: var(--ds-on-success);
+
+  --color-disabled: var(--ds-disabled);
+  --color-on-disabled: var(--ds-on-disabled);
+
+  --color-overlay: var(--ds-overlay);
 }
