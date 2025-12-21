@@ -1,11 +1,161 @@
-.text-body {
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 400;
+/*
+  typography.css
+  -------------
+  Typography tokens + utility classes.
+
+  - Tokens define the typographic scale (sizes, line-heights, weights).
+  - Classes expose a stable API for DS usage and documentation.
+  - Components should prefer these classes (or map them into component styles),
+    rather than hard-coding font sizes.
+*/
+
+:root {
+  /* Font sizes */
+  --ds-font-size-100: 12px;
+  --ds-font-size-200: 14px;
+  --ds-font-size-300: 16px;
+  --ds-font-size-400: 24px;
+  --ds-font-size-500: 28px;
+  --ds-font-size-600: 32px;
+  --ds-font-size-700: 42px;
+  --ds-font-size-800: 54px;
+  --ds-font-size-900: 56px;
+
+  /* Weights */
+  --ds-weight-100: 300; /* Light */
+  --ds-weight-200: 400; /* Regular */
+  --ds-weight-300: 500; /* Medium */
+  --ds-weight-400: 600; /* DemiBold */
+  --ds-weight-500: 700; /* Bold */
+
+  /* Line heights */
+  --ds-lh-100: 18px;
+  --ds-lh-200: 20px;
+  --ds-lh-300: 24px;
+  --ds-lh-400: 36px;
+  --ds-lh-500: 42px;
+  --ds-lh-600: 48px;
+  --ds-lh-700: 63px;
+  --ds-lh-800: 84px;
+
+  /* Subtitle specific (per your design/spec) */
+  --ds-font-size-subtitle: 10px;
+  --ds-lh-subtitle: 16px;
 }
 
-.text-title {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 600;
+/* =========================
+   Display
+   ========================= */
+
+.ds-display-large {
+  font-size: var(--ds-font-size-900); /* 56 */
+  font-weight: var(--ds-weight-500);  /* Bold */
+  line-height: var(--ds-lh-800);      /* 84 */
 }
+
+.ds-display-small {
+  font-size: var(--ds-font-size-700); /* 42 */
+  font-weight: var(--ds-weight-400);  /* DemiBold */
+  line-height: var(--ds-lh-700);      /* 63 */
+}
+
+/* =========================
+   Headline
+   ========================= */
+
+.ds-headline-large {
+  font-size: var(--ds-font-size-600); /* 32 */
+  font-weight: var(--ds-weight-500);  /* Bold */
+  line-height: var(--ds-lh-600);      /* 48 */
+}
+
+.ds-headline-medium {
+  font-size: var(--ds-font-size-500); /* 28 */
+  font-weight: var(--ds-weight-400);  /* DemiBold */
+  line-height: var(--ds-lh-500);      /* 42 */
+}
+
+.ds-headline-small {
+  font-size: var(--ds-font-size-400); /* 24 */
+  font-weight: var(--ds-weight-200);  /* Regular */
+  line-height: var(--ds-lh-400);      /* 36 */
+}
+
+/* =========================
+   Title
+   ========================= */
+
+.ds-title-large {
+  font-size: var(--ds-font-size-300); /* 16 */
+  font-weight: var(--ds-weight-400);  /* DemiBold */
+  line-height: var(--ds-lh-300);      /* 24 */
+}
+
+.ds-title-medium {
+  font-size: var(--ds-font-size-300); /* 16 */
+  font-weight: var(--ds-weight-300);  /* Medium */
+  line-height: var(--ds-lh-300);      /* 24 */
+}
+
+.ds-title-small {
+  font-size: var(--ds-font-size-200); /* 14 */
+  font-weight: var(--ds-weight-400);  /* DemiBold */
+  line-height: var(--ds-lh-200);      /* 20 */
+}
+
+/* =========================
+   Body
+   ========================= */
+
+.ds-body-large-regular {
+  font-size: var(--ds-font-size-300); /* 16 */
+  font-weight: var(--ds-weight-200);  /* Regular */
+  line-height: var(--ds-lh-300);      /* 24 */
+}
+
+.ds-body-large-light {
+  font-size: var(--ds-font-size-300); /* 16 */
+  font-weight: var(--ds-weight-100);  /* Light */
+  line-height: var(--ds-lh-300);      /* 24 */
+}
+
+.ds-body-medium-medium {
+  font-size: var(--ds-font-size-200); /* 14 */
+  font-weight: var(--ds-weight-300);  /* Medium */
+  line-height: var(--ds-lh-200);      /* 20 */
+}
+
+.ds-body-medium-regular {
+  font-size: var(--ds-font-size-200); /* 14 */
+  font-weight: var(--ds-weight-200);  /* Regular */
+  line-height: var(--ds-lh-200);      /* 20 */
+}
+
+.ds-body-small-medium {
+  font-size: var(--ds-font-size-100); /* 12 */
+  font-weight: var(--ds-weight-300);  /* Medium */
+  line-height: var(--ds-lh-100);      /* 18 */
+}
+
+.ds-body-small-regular {
+  font-size: var(--ds-font-size-100); /* 12 */
+  font-weight: var(--ds-weight-200);  /* Regular */
+  line-height: var(--ds-lh-100);      /* 18 */
+}
+
+/* =========================
+   Subtitle
+   ========================= */
+
+.ds-subtitle-medium {
+  font-size: var(--ds-font-size-subtitle); /* 10 */
+  font-weight: var(--ds-weight-400);       /* DemiBold */
+  line-height: var(--ds-lh-subtitle);      /* 16 */
+}
+
+.ds-subtitle-regular {
+  font-size: var(--ds-font-size-subtitle); /* 10 */
+  font-weight: var(--ds-weight-300);       /* Medium */
+  line-height: var(--ds-lh-subtitle);      /* 16 */
+}
+
