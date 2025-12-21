@@ -27,8 +27,6 @@
   - Components should avoid hard-coded hex values and prefer semantic classes/tokens.
 */
 
-
-
 @theme {
   /* ===== Core app semantics ===== */
   --color-bg: var(--ds-bg);
@@ -92,5 +90,9 @@
   --radius-sm: var(--ds-radius-sm);
   --radius-md: var(--ds-radius-md);
   --radius-lg: var(--ds-radius-lg);
-  --radius-xl: var(--ds-radius-xl);
+
+  /* optional extra steps */
+  --radius-xl: var(--ds-radius-xlg);
+  --radius-2xl: var(--ds-radius-2xlg);
+  --radius-full: var(--ds-radius-full);
 }
