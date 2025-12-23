@@ -9,11 +9,13 @@ function App() {
   return (
     <div className="min-h-screen bg-bg text-text p-6">
       <Button onClick={() => setTheme("light")}>Light</Button>
-      <Button variant="secondary" onClick={() => setTheme("dark")}>
+      <Button variant="outline" onClick={() => setTheme("dark")}>
         Dark
       </Button>
-      <Button variant="ghost">Ghost</Button>
-      <Button size="icon">+</Button>
+      <Button variant="text">Text</Button>
+      <Button icon size="lg">
+        +
+      </Button>
     </div>
   );
 }
