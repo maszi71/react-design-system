@@ -18,8 +18,8 @@ const tagVariants = cva(
         danger: "",
       },
       size: {
-        sm: "h-6 px-3 text-xs",
-        lg: "h-8 px-4 text-sm",
+        sm: "min-h-6 px-3 py-1 text-xs",
+        lg: "min-h-8 px-4 py-1.5 text-sm",
       },
       state: {
         default: "",
