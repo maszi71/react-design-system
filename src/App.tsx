@@ -13,7 +13,7 @@ function App() {
         Dark
       </Button>
       <Button variant="text">Text</Button>
-      <Button icon size="lg">
+      <Button iconOnly size="lg" aria-label="Add">
         +
       </Button>
     </div>

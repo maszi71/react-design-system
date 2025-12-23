@@ -22,7 +22,7 @@ const buttonVariants = cva(
         sm: "h-8 px-4 text-xs",
         lg: "h-10 px-6 text-sm",
       },
-      icon: {
+      iconOnly: {
         true: "p-0",
         false: "",
       },
@@ -34,12 +34,12 @@ const buttonVariants = cva(
     compoundVariants: [
       {
         size: "sm",
-        icon: true,
+        iconOnly: true,
         className: "w-8",
       },
       {
         size: "lg",
-        icon: true,
+        iconOnly: true,
         className: "w-10",
       },
       {
@@ -137,7 +137,7 @@ const buttonVariants = cva(
       variant: "filled",
       color: "primary",
       size: "lg",
-      icon: false,
+      iconOnly: false,
       rounded: true,
     },
   }
@@ -158,21 +158,58 @@ export interface ButtonProps
   variant?: ButtonVariant;
   color?: ButtonColor;
   size?: ButtonSize;
-  icon?: boolean;
+  iconOnly?: boolean;
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
   rounded?: boolean;
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, color, size, icon, rounded, ...props }, ref) => {
+  (
+    {
+      className,
+      variant,
+      color,
+      size,
+      iconOnly,
+      startIcon,
+      endIcon,
+      rounded,
+      children,
+      ...props
+    },
+    ref
+  ) => {
+    const iconClassName = size === "sm" ? "h-4 w-4" : "h-5 w-5";
+    const iconOnlyContent = children ?? startIcon ?? endIcon;
+
     return (
       <button
         ref={ref}
         className={cn(
-          buttonVariants({ variant, color, size, icon, rounded }),
+          buttonVariants({ variant, color, size, iconOnly, rounded }),
           className
         )}
         {...props}
-      />
+      >
+        {iconOnly ? (
+          iconOnlyContent
+        ) : (
+          <>
+            {startIcon ? (
+              <span className={cn("inline-flex shrink-0", iconClassName)}>
+                {startIcon}
+              </span>
+            ) : null}
+            {children}
+            {endIcon ? (
+              <span className={cn("inline-flex shrink-0", iconClassName)}>
+                {endIcon}
+              </span>
+            ) : null}
+          </>
+        )}
+      </button>
     );
   }
 );

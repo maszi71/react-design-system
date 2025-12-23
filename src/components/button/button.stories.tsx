@@ -1,6 +1,29 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./button";
 
+const PlusIcon = () => (
+  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+    <path
+      d="M10 4.5v11M4.5 10h11"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
+const ArrowRightIcon = () => (
+  <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+    <path
+      d="M4.5 10h11M11.5 5.5l4.5 4.5-4.5 4.5"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 const meta: Meta<typeof Button> = {
   title: "Components/Button",
   component: Button,
@@ -9,7 +32,9 @@ const meta: Meta<typeof Button> = {
     variant: "filled",
     color: "primary",
     size: "lg",
-    icon: false,
+    iconOnly: false,
+    startIcon: false,
+    endIcon: false,
     rounded: true,
     disabled: false,
     type: "button",
@@ -27,7 +52,15 @@ const meta: Meta<typeof Button> = {
       options: ["sm", "lg"],
       control: { type: "inline-radio" },
     },
-    icon: {
+    iconOnly: {
+      options: [false, true],
+      control: { type: "inline-radio" },
+    },
+    startIcon: {
+      options: [false, true],
+      control: { type: "inline-radio" },
+    },
+    endIcon: {
       options: [false, true],
       control: { type: "inline-radio" },
     },
@@ -51,7 +84,18 @@ export default meta;
 type Story = StoryObj<typeof Button>;
 
 export const ButtonPlayground: Story = {
-  args: {
-    variant: "outline"
-  }
+  render: ({ iconOnly, startIcon, endIcon, children, ...args }) => {
+    const resolvedChildren = iconOnly ? <PlusIcon /> : children;
+
+    return (
+      <Button
+        {...args}
+        iconOnly={iconOnly}
+        startIcon={startIcon ? <PlusIcon /> : undefined}
+        endIcon={endIcon ? <ArrowRightIcon /> : undefined}
+      >
+        {resolvedChildren}
+      </Button>
+    );
+  },
 };
