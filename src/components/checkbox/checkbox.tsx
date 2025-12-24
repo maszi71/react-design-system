@@ -3,7 +3,7 @@ import { cn } from "@/utils/cn";
 
 export interface CheckboxProps
   extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
-  label?: string;
+  label?: React.ReactNode;
   hint?: React.ReactNode; //plain text or richer content (e.g., a link, icon, or formatted text).
   error?: React.ReactNode; //plain text or richer content (e.g., a link, icon, or formatted text).
   indeterminate?: boolean;
