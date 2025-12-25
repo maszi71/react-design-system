@@ -27,3 +27,9 @@ Keep simple components in fewer files; split only when it improves clarity.
 
 - One playground story per component with inline-radio controls when practical.
 - Use small inline SVGs for icon examples; keep them local to the story file.
+
+## Handoff
+
+- Components refactored to split render/styles/types (and hooks when needed): Button, Tag, Checkbox.
+- Checkbox: supports `indeterminate`, `size` (`sm`/`lg`), `label` as string, `hint`/`error` as ReactNode.
+- Tag: supports `variant` (`filled`/`outline`), `state` (`default`/`selected`/`deactive`), `color` (primary/secondary/tertiary/warn/danger), icons, and `onRemove`.
