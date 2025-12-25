@@ -33,6 +33,11 @@ npm run storybook
 ## Project Structure
 
 - `src/components/` - Components, one folder per component
+  - `component.tsx` - render-only component
+  - `component.styles.ts` - CVA variants and class maps
+  - `component.types.ts` - props/types
+  - `component.hooks.ts` - optional logic hooks (when needed)
+  - `component.stories.tsx` - Storybook
 - `src/styles/` - Global styles and tokens
 - `src/styles/tokens/` - Design tokens and themes
 - `src/utils/cn.ts` - className utility
@@ -61,12 +66,21 @@ document.documentElement.setAttribute("data-theme", "dark");
 
 ## Components
 
-Components use variants via `class-variance-authority`. Example button:
+Components use variants via `class-variance-authority`.
+Available components:
+
+- Button (`src/components/button`)
+- Tag (`src/components/tag`)
+- Checkbox (`src/components/checkbox`)
+
+Example button:
 
 ```tsx
 import { Button } from "@/components/button";
 
-<Button variant="secondary">Secondary</Button>;
+<Button variant="outline" color="secondary">Secondary</Button>;
+<Button startIcon={<PlusIcon />}>Add</Button>;
+<Button iconOnly aria-label="Add"><PlusIcon /></Button>;
 ```
 
 ## Storybook
