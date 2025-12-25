@@ -19,6 +19,7 @@ const preview: Preview = {
   },
   initialGlobals: {
     theme: "light",
+    direction: "ltr",
   },
   globalTypes: {
     theme: {
@@ -33,12 +34,28 @@ const preview: Preview = {
         dynamicTitle: true,
       },
     },
+    direction: {
+      description: "Direction",
+      defaultValue: "ltr",
+      toolbar: {
+        icon: "transfer",
+        items: [
+          { value: "ltr", title: "LTR" },
+          { value: "rtl", title: "RTL" },
+        ],
+        dynamicTitle: true,
+      },
+    },
   },
   decorators: [
     (Story, context) => {
       document.documentElement.setAttribute(
         "data-theme",
         String(context.globals.theme ?? "light")
+      );
+      document.documentElement.setAttribute(
+        "dir",
+        String(context.globals.direction ?? "ltr")
       );
       return <Story />;
     },

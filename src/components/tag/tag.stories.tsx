@@ -100,3 +100,46 @@ export const TagPlayground: Story = {
     </Tag>
   ),
 };
+
+export const TagLtrRtlShowcase: Story = {
+  render: () => (
+    <div className="grid gap-6 sm:grid-cols-2">
+      <section
+        dir="ltr"
+        className="rounded-lg border border-border bg-surface-2 p-5"
+      >
+        <h3 className="text-sm font-semibold text-text">LTR (English)</h3>
+        <div className="mt-5 flex flex-wrap gap-3">
+          <Tag>New</Tag>
+          <Tag variant="outline" color="secondary">
+            Featured
+          </Tag>
+          <Tag color="warn">Limited</Tag>
+          <Tag state="selected">Selected</Tag>
+          <Tag startIcon={<PlusIcon />}>Add tag</Tag>
+          <Tag onRemove={() => {}} removeIcon={<CloseIcon />}>
+            Removable
+          </Tag>
+        </div>
+      </section>
+      <section
+        dir="rtl"
+        className="rounded-lg border border-border bg-surface-2 p-5"
+      >
+        <h3 className="text-sm font-semibold text-text">RTL (فارسی)</h3>
+        <div className="mt-5 flex flex-wrap gap-3">
+          <Tag>جدید</Tag>
+          <Tag variant="outline" color="secondary">
+            ویژه
+          </Tag>
+          <Tag color="warn">محدود</Tag>
+          <Tag state="selected">انتخاب‌شده</Tag>
+          <Tag startIcon={<PlusIcon />}>افزودن برچسب</Tag>
+          <Tag onRemove={() => {}} removeIcon={<CloseIcon />}>
+            قابل حذف
+          </Tag>
+        </div>
+      </section>
+    </div>
+  ),
+};
