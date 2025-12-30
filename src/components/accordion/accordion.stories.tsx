@@ -68,3 +68,72 @@ export const AccordionPlayground: Story = {
   render: (args) => <AccordionStory {...args} />,
 };
 
+export const AccordionLtrRtlShowcase: Story = {
+  render: () => (
+    <div className="grid gap-6 sm:grid-cols-2">
+      <section
+        dir="ltr"
+        className="rounded-lg border border-border bg-surface-2 p-5"
+      >
+        <h3 className="text-sm font-semibold text-text">LTR (English)</h3>
+        <div className="mt-5">
+          <Accordion
+            items={[
+              {
+                value: "faq-1",
+                title: "Order tracking",
+                content:
+                  "Track your order from the account page under recent orders.",
+              },
+              {
+                value: "faq-2",
+                title: "Payment methods",
+                content: "We accept all major credit cards and PayPal.",
+              },
+              {
+                value: "faq-3",
+                title: "Account security",
+                content:
+                  "Enable two-factor authentication for extra protection.",
+              },
+            ]}
+            type="single"
+            collapsible
+            defaultValue="faq-1"
+          />
+        </div>
+      </section>
+      <section
+        dir="rtl"
+        className="rounded-lg border border-border bg-surface-2 p-5"
+      >
+        <h3 className="text-sm font-semibold text-text">RTL (فارسی)</h3>
+        <div className="mt-5">
+          <Accordion
+            items={[
+              {
+                value: "faq-rtl-1",
+                title: "پیگیری سفارش",
+                content:
+                  "از بخش سفارش‌های اخیر در حساب کاربری وضعیت سفارش را ببینید.",
+              },
+              {
+                value: "faq-rtl-2",
+                title: "روش‌های پرداخت",
+                content: "پرداخت با کارت‌های بانکی و پی‌پال امکان‌پذیر است.",
+              },
+              {
+                value: "faq-rtl-3",
+                title: "امنیت حساب",
+                content: "برای امنیت بیشتر احراز هویت دو مرحله‌ای را فعال کنید.",
+              },
+            ]}
+            type="single"
+            collapsible
+            defaultValue="faq-rtl-1"
+          />
+        </div>
+      </section>
+    </div>
+  ),
+};
