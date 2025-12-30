@@ -2,6 +2,24 @@ import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { TextField } from "./text-field";
 
+const UserIcon = () => (
+  <svg viewBox="0 0 24 24" aria-hidden="true" className="h-full w-full">
+    <path
+      d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.2 0-7 2.2-7 5v1h14v-1c0-2.8-2.8-5-7-5Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
+const EyeIcon = () => (
+  <svg viewBox="0 0 24 24" aria-hidden="true" className="h-full w-full">
+    <path
+      d="M12 5c-5 0-9.3 3.1-11 7 1.7 3.9 6 7 11 7s9.3-3.1 11-7c-1.7-3.9-6-7-11-7Zm0 11a4 4 0 1 1 4-4 4 4 0 0 1-4 4Z"
+      fill="currentColor"
+    />
+  </svg>
+);
+
 const TextFieldStory = (args: React.ComponentProps<typeof TextField>) => {
   const [value, setValue] = React.useState(args.value ?? "");
 
@@ -30,6 +48,9 @@ const meta: Meta<typeof TextField> = {
     type: "text",
     value: "",
     maxLength: 50,
+    startIcon: undefined,
+    endIcon: undefined,
+    onEndIconClick: undefined,
   },
   argTypes: {
     disabled: {
@@ -37,6 +58,9 @@ const meta: Meta<typeof TextField> = {
       control: { type: "inline-radio" },
     },
     onChange: { action: "changed" },
+    startIcon: { control: false },
+    endIcon: { control: false },
+    onEndIconClick: { control: false },
   },
 };
 
@@ -56,7 +80,11 @@ export const TextFieldLtrRtlShowcase: Story = {
       >
         <h3 className="text-sm font-semibold text-text">LTR (English)</h3>
         <div className="mt-5 space-y-5">
-          <TextField label="Full name" placeholder="Jane Doe" />
+          <TextField
+            label="Full name"
+            placeholder="Jane Doe"
+            startIcon={<UserIcon />}
+          />
           <TextField
             label="Email address"
             placeholder="hello@example.com"
@@ -76,7 +104,11 @@ export const TextFieldLtrRtlShowcase: Story = {
       >
         <h3 className="text-sm font-semibold text-text">RTL (فارسی)</h3>
         <div className="mt-5 space-y-5">
-          <TextField label="نام کامل" placeholder="مثال: سارا رضایی" />
+          <TextField
+            label="نام کامل"
+            placeholder="مثال: سارا رضایی"
+            endIcon={<UserIcon />}
+          />
           <TextField
             label="ایمیل"
             placeholder="hello@example.com"
@@ -92,4 +124,23 @@ export const TextFieldLtrRtlShowcase: Story = {
       </section>
     </div>
   ),
+};
+
+export const TextFieldWithActionIcon: Story = {
+  render: () => <TextFieldWithActionIconStory />,
+};
+
+const TextFieldWithActionIconStory = () => {
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  return (
+    <TextField
+      label="Password"
+      type={isVisible ? "text" : "password"}
+      placeholder="••••••••"
+      endIcon={<EyeIcon />}
+      endIconAriaLabel={isVisible ? "Hide password" : "Show password"}
+      onEndIconClick={() => setIsVisible((prev) => !prev)}
+    />
+  );
 };

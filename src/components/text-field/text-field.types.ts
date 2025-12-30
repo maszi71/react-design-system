@@ -5,4 +5,8 @@ export interface TextFieldProps
   label?: string;
   hint?: React.ReactNode;
   error?: React.ReactNode;
+  startIcon?: React.ReactNode;
+  endIcon?: React.ReactNode;
+  onEndIconClick?: () => void;
+  endIconAriaLabel?: string;
 }

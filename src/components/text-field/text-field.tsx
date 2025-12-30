@@ -6,7 +6,21 @@ import type { TextFieldProps } from "./text-field.types";
 
 export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
   (
-    { className, label, hint, error, id, disabled, maxLength, onChange, ...props },
+    {
+      className,
+      label,
+      hint,
+      error,
+      id,
+      disabled,
+      maxLength,
+      startIcon,
+      endIcon,
+      onEndIconClick,
+      endIconAriaLabel,
+      onChange,
+      ...props
+    },
     ref
   ) => {
     // Keep character count in sync for both controlled and uncontrolled usage.
@@ -32,6 +46,7 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
     // Render a single row for hint/error + counter with space-between.
     const hasSupporting = Boolean(error || hint || maxLength !== undefined);
     const counterClass = disabled ? "text-on-disabled" : "text-muted";
+    const iconToneClass = disabled ? "text-on-disabled" : null;
 
     React.useImperativeHandle(ref, () => inputRef.current as HTMLInputElement);
 
@@ -45,21 +60,60 @@ export const TextField = React.forwardRef<HTMLInputElement, TextFieldProps>(
             {label}
           </label>
         ) : null}
-        <input
-          id={inputId}
-          ref={inputRef}
-          disabled={disabled}
-          aria-invalid={error ? "true" : undefined}
-          aria-describedby={describedBy}
-          className={cn(
-            textFieldStyles.input,
-            error ? textFieldStyles.inputError : null,
-            disabled ? textFieldStyles.inputDisabled : null
-          )}
-          maxLength={maxLength}
-          onChange={handleChange}
-          {...props}
-        />
+        <div className={textFieldStyles.fieldWrapper}>
+          {startIcon ? (
+            <span
+              className={cn(
+                textFieldStyles.iconSlot,
+                textFieldStyles.startIcon,
+                iconToneClass
+              )}
+            >
+              <span className={textFieldStyles.icon}>{startIcon}</span>
+            </span>
+          ) : null}
+          <input
+            id={inputId}
+            ref={inputRef}
+            disabled={disabled}
+            aria-invalid={error ? "true" : undefined}
+            aria-describedby={describedBy}
+            className={cn(
+              textFieldStyles.input,
+              startIcon ? textFieldStyles.inputWithStartIcon : null,
+              endIcon ? textFieldStyles.inputWithEndIcon : null,
+              error ? textFieldStyles.inputError : null,
+              disabled ? textFieldStyles.inputDisabled : null
+            )}
+            maxLength={maxLength}
+            onChange={handleChange}
+            {...props}
+          />
+          {endIcon ? (
+            <span
+              className={cn(
+                textFieldStyles.iconSlot,
+                textFieldStyles.endIcon,
+                onEndIconClick ? null : textFieldStyles.endIconPassive,
+                iconToneClass
+              )}
+            >
+              {onEndIconClick ? (
+                <button
+                  type="button"
+                  onClick={onEndIconClick}
+                  disabled={disabled}
+                  className={textFieldStyles.iconButton}
+                  aria-label={endIconAriaLabel ?? "Input action"}
+                >
+                  <span className={textFieldStyles.icon}>{endIcon}</span>
+                </button>
+              ) : (
+                <span className={textFieldStyles.icon}>{endIcon}</span>
+              )}
+            </span>
+          ) : null}
+        </div>
         {hasSupporting ? (
           <div className={textFieldStyles.supportingRow}>
             {error ? (
