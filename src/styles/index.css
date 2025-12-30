@@ -96,3 +96,24 @@
   --radius-2xl: var(--ds-radius-2xlg);
   --radius-full: var(--ds-radius-full);
 }
+
+@keyframes ds-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.ds-skeleton-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--ds-content-50),
+    transparent
+  );
+  opacity: 0.6;
+  animation: ds-shimmer 1.6s infinite;
+}
