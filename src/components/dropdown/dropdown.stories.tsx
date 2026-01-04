@@ -88,7 +88,7 @@ export const DropdownLtrRtlShowcase: Story = {
             <DropdownTrigger asChild>
               <Button variant="outline">باز کردن منو</Button>
             </DropdownTrigger>
-            <DropdownContent align="end" dir="rtl">
+            <DropdownContent align="start" dir="rtl">
               <DropdownItem startIcon={<IconBox />}>پروژه جدید</DropdownItem>
               <DropdownItem startIcon={<IconBox />}>دعوت تیم</DropdownItem>
               <DropdownItem startIcon={<IconBox />}>تنظیمات</DropdownItem>
