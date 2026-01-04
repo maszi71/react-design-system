@@ -13,7 +13,7 @@ export const Dropdown = DropdownPrimitive.Root;
 export const DropdownTrigger = DropdownPrimitive.Trigger;
 
 export const DropdownContent = React.forwardRef<
-  React.ElementRef<typeof DropdownPrimitive.Content>,
+  React.ComponentRef<typeof DropdownPrimitive.Content>,
   DropdownContentProps
 >(({ className, sideOffset = 8, ...props }, ref) => (
   <DropdownPrimitive.Portal>
@@ -29,7 +29,7 @@ export const DropdownContent = React.forwardRef<
 DropdownContent.displayName = "DropdownContent";
 
 export const DropdownItem = React.forwardRef<
-  React.ElementRef<typeof DropdownPrimitive.Item>,
+  React.ComponentRef<typeof DropdownPrimitive.Item>,
   DropdownItemProps
 >(({ className, startIcon, children, ...props }, ref) => (
   <DropdownPrimitive.Item
@@ -45,7 +45,7 @@ export const DropdownItem = React.forwardRef<
 DropdownItem.displayName = "DropdownItem";
 
 export const DropdownLabel = React.forwardRef<
-  React.ElementRef<typeof DropdownPrimitive.Label>,
+  React.ComponentRef<typeof DropdownPrimitive.Label>,
   DropdownLabelProps
 >(({ className, ...props }, ref) => (
   <DropdownPrimitive.Label
@@ -58,7 +58,7 @@ export const DropdownLabel = React.forwardRef<
 DropdownLabel.displayName = "DropdownLabel";
 
 export const DropdownSeparator = React.forwardRef<
-  React.ElementRef<typeof DropdownPrimitive.Separator>,
+  React.ComponentRef<typeof DropdownPrimitive.Separator>,
   DropdownSeparatorProps
 >(({ className, ...props }, ref) => (
   <DropdownPrimitive.Separator

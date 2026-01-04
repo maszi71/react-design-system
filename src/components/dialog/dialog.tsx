@@ -17,7 +17,7 @@ export const DialogTrigger = DialogPrimitive.Trigger;
 
 // Content renders in a Portal with overlay + centered panel.
 export const DialogContent = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Content>,
+  React.ComponentRef<typeof DialogPrimitive.Content>,
   DialogContentProps
 >(({ className, size = "md", showCloseButton = true, children, ...props }, ref) => (
   <DialogPrimitive.Portal>
@@ -56,7 +56,7 @@ DialogContent.displayName = "DialogContent";
 
 // Title hooks into Radix aria-labelledby.
 export const DialogTitle = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Title>,
+  React.ComponentRef<typeof DialogPrimitive.Title>,
   DialogTitleProps
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Title
@@ -70,7 +70,7 @@ DialogTitle.displayName = "DialogTitle";
 
 // Description hooks into Radix aria-describedby.
 export const DialogDescription = React.forwardRef<
-  React.ElementRef<typeof DialogPrimitive.Description>,
+  React.ComponentRef<typeof DialogPrimitive.Description>,
   DialogDescriptionProps
 >(({ className, ...props }, ref) => (
   <DialogPrimitive.Description
