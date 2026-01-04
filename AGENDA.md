@@ -6,15 +6,16 @@ Copy it, fill it in, and keep it updated as the system evolves.
 ## 1) Snapshot
 
 - **What is this system?**
+- **What is this system?** React design system built with Tailwind v4 + CSS tokens and Storybook.
 - **Who is it for?** (product teams, internal apps, public library)
 - **Primary goals:** (consistency, speed, accessibility, theming)
 - **Non-goals:** (what this system will not cover)
 
 ## 2) Current Status
 
-- **Stage:** (prototype, alpha, beta, production)
-- **What is done:** (components, tokens, themes, Storybook setup)
-- **In progress:** (current focus area, next component)
+- **Stage:** prototype
+- **What is done:** tokens + themes, Storybook setup, core components implemented (Button, Tag, Checkbox, Radio, Switch, TextField, Accordion, Skeleton, Dialog, Dropdown)
+- **In progress:** refining components + adding more form controls
 - **Biggest risks:** (scope, tech debt, unknowns)
 
 ## 3) Key Decisions (Decision Log)
@@ -35,8 +36,8 @@ Add date and rationale if it changes.
 
 ## 5) Components
 
-- **Existing:** (list the current set)
-- **Next up:** (short list of planned components)
+- **Existing:** Button, Tag, Checkbox, Radio, Switch, TextField, Accordion, Skeleton, Dialog, Dropdown
+- **Next up:** Select (separate from Dropdown), potential TextArea (skipped for now)
 - **Variant strategy:** (size, intent, tone)
 - **Accessibility rules:** (focus, aria, keyboard)
 
