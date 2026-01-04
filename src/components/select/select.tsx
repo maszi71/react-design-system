@@ -41,11 +41,15 @@ export const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
       size = "lg",
       placeholder = "Select an option",
       options,
+      searchable = false,
+      searchPlaceholder = "Search...",
+      emptyMessage = "No results",
       id,
       disabled,
       dir,
       triggerClassName,
       contentClassName,
+      onOpenChange,
       ...props
     },
     ref
@@ -76,6 +80,33 @@ export const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
     );
     const iconToneClass = disabled ? "text-on-disabled" : null;
 
+    const [query, setQuery] = React.useState("");
+    const normalizedQuery = query.trim().toLowerCase();
+    const filteredOptions = normalizedQuery
+      ? options.filter((option) => {
+          const text =
+            option.searchText ??
+            (typeof option.label === "string" ? option.label : "");
+          return text.toLowerCase().includes(normalizedQuery);
+        })
+      : options;
+
+    const handleOpenChange = (nextOpen: boolean) => {
+      if (!nextOpen) {
+        setQuery("");
+      }
+      onOpenChange?.(nextOpen);
+    };
+
+    const handleSearchKeyDown = (
+      event: React.KeyboardEvent<HTMLInputElement>
+    ) => {
+      if (event.key === "Escape") {
+        return;
+      }
+      event.stopPropagation();
+    };
+
     return (
       <div className={cn(selectStyles.wrapper, className)} dir={dir}>
         {label ? (
@@ -86,7 +117,11 @@ export const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
             {label}
           </label>
         ) : null}
-        <SelectPrimitive.Root disabled={disabled} {...props}>
+        <SelectPrimitive.Root
+          disabled={disabled}
+          onOpenChange={handleOpenChange}
+          {...props}
+        >
           <SelectPrimitive.Trigger
             id={inputId}
             ref={ref}
@@ -112,36 +147,58 @@ export const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
               className={cn(selectStyles.content, contentClassName)}
               dir={dir}
             >
+              {searchable ? (
+                <div className={selectStyles.searchWrapper}>
+                  <input
+                    type="text"
+                    value={query}
+                    onChange={(event) => setQuery(event.target.value)}
+                    onKeyDown={handleSearchKeyDown}
+                    placeholder={searchPlaceholder}
+                    className={cn(
+                      selectStyles.searchInput,
+                      sizeClasses.searchInput
+                    )}
+                    autoFocus
+                  />
+                </div>
+              ) : null}
               <SelectPrimitive.Viewport className={selectStyles.viewport}>
-                {options.map((option) => (
-                  <SelectPrimitive.Item
-                    key={option.value}
-                    value={option.value}
-                    disabled={option.disabled}
-                    className={selectStyles.item}
-                  >
-                    <SelectPrimitive.ItemIndicator
-                      className={selectStyles.itemIndicator}
+                {filteredOptions.length ? (
+                  filteredOptions.map((option) => (
+                    <SelectPrimitive.Item
+                      key={option.value}
+                      value={option.value}
+                      disabled={option.disabled}
+                      className={selectStyles.item}
                     >
-                      <CheckIcon />
-                    </SelectPrimitive.ItemIndicator>
-                    <SelectPrimitive.ItemText asChild>
-                      <span className={selectStyles.itemText}>
-                        {option.startIcon ? (
-                          <span
-                            className={selectStyles.itemIcon}
-                            aria-hidden="true"
-                          >
-                            {option.startIcon}
+                      <SelectPrimitive.ItemIndicator
+                        className={selectStyles.itemIndicator}
+                      >
+                        <CheckIcon />
+                      </SelectPrimitive.ItemIndicator>
+                      <SelectPrimitive.ItemText asChild>
+                        <span className={selectStyles.itemText}>
+                          {option.startIcon ? (
+                            <span
+                              className={selectStyles.itemIcon}
+                              aria-hidden="true"
+                            >
+                              {option.startIcon}
+                            </span>
+                          ) : null}
+                          <span className={selectStyles.itemLabel}>
+                            {option.label}
                           </span>
-                        ) : null}
-                        <span className={selectStyles.itemLabel}>
-                          {option.label}
                         </span>
-                      </span>
-                    </SelectPrimitive.ItemText>
-                  </SelectPrimitive.Item>
-                ))}
+                      </SelectPrimitive.ItemText>
+                    </SelectPrimitive.Item>
+                  ))
+                ) : (
+                  <div className={selectStyles.emptyState}>
+                    {emptyMessage}
+                  </div>
+                )}
               </SelectPrimitive.Viewport>
             </SelectPrimitive.Content>
           </SelectPrimitive.Portal>

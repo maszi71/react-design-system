@@ -12,6 +12,9 @@ export const selectStyles = {
     "inline-flex min-w-0 items-center gap-2 text-left data-[placeholder]:text-muted rtl:text-right",
   content:
     "z-50 min-w-[220px] rounded-md bg-surface-bg-white p-2 text-text shadow-[0_2px_8px_rgba(0,0,0,0.1)]",
+  searchWrapper: "pb-2",
+  searchInput:
+    "h-10 w-full rounded-md border border-content-250 bg-surface-2 px-3 text-sm text-text placeholder:text-muted transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:border-primary",
   viewport: "flex w-[var(--radix-select-trigger-width)] flex-col",
   item:
     "relative flex w-full cursor-pointer select-none items-center rounded-md py-2 pe-3 ps-9 text-sm text-text text-left outline-none transition-colors hover:bg-surface focus:bg-surface data-[highlighted]:bg-surface data-[disabled]:cursor-not-allowed data-[disabled]:text-on-disabled data-[disabled]:hover:bg-transparent data-[disabled]:focus:bg-transparent data-[disabled]:data-[highlighted]:bg-transparent rtl:flex-row-reverse rtl:justify-end rtl:text-right",
@@ -23,16 +26,19 @@ export const selectStyles = {
   separator: "my-1 h-px bg-border",
   groupLabel:
     "px-3 py-2 text-xs font-semibold uppercase tracking-wide text-muted",
+  emptyState: "px-3 py-2 text-xs text-muted",
   supportingRow: "flex items-start justify-between gap-4",
   supporting: "min-w-0 text-xs",
   sizes: {
     sm: {
       trigger: "h-10 text-xs",
       label: "text-xs",
+      searchInput: "h-9 text-xs",
     },
     lg: {
       trigger: "h-12 text-sm",
       label: "text-sm",
+      searchInput: "h-10 text-sm",
     },
   },
 } as const;

@@ -6,6 +6,7 @@ export type SelectOption = {
   label: React.ReactNode;
   startIcon?: React.ReactNode;
   disabled?: boolean;
+  searchText?: string;
 };
 
 export interface SelectProps
@@ -17,6 +18,9 @@ export interface SelectProps
   size?: "sm" | "lg";
   placeholder?: string;
   options: SelectOption[];
+  searchable?: boolean;
+  searchPlaceholder?: string;
+  emptyMessage?: React.ReactNode;
   className?: string;
   triggerClassName?: string;
   contentClassName?: string;

@@ -88,6 +88,7 @@ const meta: Meta<typeof Select> = {
     size: "lg",
     value: "",
     options,
+    searchable: true,
   },
   argTypes: {
     size: {
@@ -95,6 +96,10 @@ const meta: Meta<typeof Select> = {
       control: { type: "inline-radio" },
     },
     disabled: {
+      options: [false, true],
+      control: { type: "inline-radio" },
+    },
+    searchable: {
       options: [false, true],
       control: { type: "inline-radio" },
     },
@@ -123,24 +128,28 @@ export const SelectLtrRtlShowcase: Story = {
             label="Project"
             placeholder="Select a project"
             options={options}
+            searchable
           />
           <Select
             label="Owner"
             placeholder="Choose owner"
             hint="You can update this later."
             options={options}
+            searchable
           />
           <Select
             label="Status"
             placeholder="Pick a status"
             error="Status is required."
             options={options}
+            searchable
           />
           <Select
             label="Disabled"
             placeholder="Disabled"
             disabled
             options={options}
+            searchable
           />
         </div>
       </section>
@@ -155,6 +164,7 @@ export const SelectLtrRtlShowcase: Story = {
             label="پروژه"
             placeholder="انتخاب پروژه"
             options={rtlOptions}
+            searchable
           />
           <Select
             dir="rtl"
@@ -162,6 +172,7 @@ export const SelectLtrRtlShowcase: Story = {
             placeholder="انتخاب مالک"
             hint="بعدا می‌توانید ویرایش کنید."
             options={rtlOptions}
+            searchable
           />
           <Select
             dir="rtl"
@@ -169,6 +180,7 @@ export const SelectLtrRtlShowcase: Story = {
             placeholder="انتخاب وضعیت"
             error="انتخاب وضعیت الزامی است."
             options={rtlOptions}
+            searchable
           />
           <Select
             dir="rtl"
@@ -176,6 +188,7 @@ export const SelectLtrRtlShowcase: Story = {
             placeholder="غیرفعال"
             disabled
             options={rtlOptions}
+            searchable
           />
         </div>
       </section>
