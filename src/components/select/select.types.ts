@@ -4,6 +4,7 @@ import type * as SelectPrimitive from "@radix-ui/react-select";
 export type SelectOption = {
   value: string;
   label: React.ReactNode;
+  startIcon?: React.ReactNode;
   disabled?: boolean;
 };
 

@@ -125,8 +125,20 @@ export const Select = React.forwardRef<HTMLButtonElement, SelectProps>(
                     >
                       <CheckIcon />
                     </SelectPrimitive.ItemIndicator>
-                    <SelectPrimitive.ItemText className={selectStyles.itemText}>
-                      {option.label}
+                    <SelectPrimitive.ItemText asChild>
+                      <span className={selectStyles.itemText}>
+                        {option.startIcon ? (
+                          <span
+                            className={selectStyles.itemIcon}
+                            aria-hidden="true"
+                          >
+                            {option.startIcon}
+                          </span>
+                        ) : null}
+                        <span className={selectStyles.itemLabel}>
+                          {option.label}
+                        </span>
+                      </span>
                     </SelectPrimitive.ItemText>
                   </SelectPrimitive.Item>
                 ))}

@@ -8,7 +8,8 @@ export const selectStyles = {
   triggerDisabled:
     "cursor-not-allowed border-disabled bg-disabled text-on-disabled",
   triggerIcon: "h-4 w-4 text-muted",
-  value: "min-w-0 text-left data-[placeholder]:text-muted rtl:text-right",
+  value:
+    "inline-flex min-w-0 items-center gap-2 text-left data-[placeholder]:text-muted rtl:text-right",
   content:
     "z-50 min-w-[220px] rounded-md bg-surface-bg-white p-2 text-text shadow-[0_2px_8px_rgba(0,0,0,0.1)]",
   viewport: "flex w-[var(--radix-select-trigger-width)] flex-col",
@@ -16,7 +17,9 @@ export const selectStyles = {
     "relative flex w-full cursor-pointer select-none items-center rounded-md py-2 pe-3 ps-9 text-sm text-text text-left outline-none transition-colors hover:bg-surface focus:bg-surface data-[highlighted]:bg-surface data-[disabled]:cursor-not-allowed data-[disabled]:text-on-disabled data-[disabled]:hover:bg-transparent data-[disabled]:focus:bg-transparent data-[disabled]:data-[highlighted]:bg-transparent rtl:flex-row-reverse rtl:justify-end rtl:text-right",
   itemIndicator:
     "absolute start-3 inline-flex h-4 w-4 items-center justify-center text-primary",
-  itemText: "min-w-0",
+  itemIcon: "h-4 w-4 text-muted",
+  itemText: "inline-flex min-w-0 items-center gap-2",
+  itemLabel: "min-w-0",
   separator: "my-1 h-px bg-border",
   groupLabel:
     "px-3 py-2 text-xs font-semibold uppercase tracking-wide text-muted",

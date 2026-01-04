@@ -3,11 +3,62 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Select } from "./select";
 import type { SelectOption } from "./select.types";
 
+const IconBox = () => (
+  <svg viewBox="0 0 20 20" aria-hidden="true" className="h-full w-full">
+    <path
+      d="M4 6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+    />
+    <path
+      d="M4 7.5h12"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
+const IconCircle = () => (
+  <svg viewBox="0 0 20 20" aria-hidden="true" className="h-full w-full">
+    <circle
+      cx="10"
+      cy="10"
+      r="6"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+    />
+  </svg>
+);
+
+
+const IconTriangle = () => (
+  <svg viewBox="0 0 20 20" aria-hidden="true" className="h-full w-full">
+    <path
+      d="M10 3 18 17H2Z"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 const options: SelectOption[] = [
-  { value: "design", label: "Design" },
-  { value: "engineering", label: "Engineering" },
-  { value: "product", label: "Product" },
+  { value: "design", label: "Design", startIcon: <IconCircle /> },
+  { value: "engineering", label: "Engineering", startIcon: <IconBox /> },
+  { value: "product", label: "Product", startIcon: <IconTriangle /> },
   { value: "marketing", label: "Marketing", disabled: true },
+];
+
+const rtlOptions: SelectOption[] = [
+  { value: "design", label: "طراحی", startIcon: <IconCircle /> },
+  { value: "engineering", label: "مهندسی", startIcon: <IconBox /> },
+  { value: "product", label: "محصول", startIcon: <IconTriangle /> },
+  { value: "marketing", label: "بازاریابی", disabled: true },
 ];
 
 const SelectStory = (args: React.ComponentProps<typeof Select>) => {
@@ -97,34 +148,34 @@ export const SelectLtrRtlShowcase: Story = {
         dir="rtl"
         className="rounded-lg border border-border bg-surface-2 p-5"
       >
-        <h3 className="text-sm font-semibold text-text">RTL (Arabic)</h3>
+        <h3 className="text-sm font-semibold text-text">RTL (فارسی)</h3>
         <div className="mt-5 space-y-5">
           <Select
             dir="rtl"
-            label="Project"
-            placeholder="Select a project"
-            options={options}
+            label="پروژه"
+            placeholder="انتخاب پروژه"
+            options={rtlOptions}
           />
           <Select
             dir="rtl"
-            label="Owner"
-            placeholder="Choose owner"
-            hint="You can update this later."
-            options={options}
+            label="مالک"
+            placeholder="انتخاب مالک"
+            hint="بعدا می‌توانید ویرایش کنید."
+            options={rtlOptions}
           />
           <Select
             dir="rtl"
-            label="Status"
-            placeholder="Pick a status"
-            error="Status is required."
-            options={options}
+            label="وضعیت"
+            placeholder="انتخاب وضعیت"
+            error="انتخاب وضعیت الزامی است."
+            options={rtlOptions}
           />
           <Select
             dir="rtl"
-            label="Disabled"
-            placeholder="Disabled"
+            label="غیرفعال"
+            placeholder="غیرفعال"
             disabled
-            options={options}
+            options={rtlOptions}
           />
         </div>
       </section>
